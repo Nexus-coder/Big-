@@ -1,0 +1,23 @@
+<% layout('layout/boilerplate.ejs') %>
+    <div class="row">
+        <div class="col-6 oset-3">
+            <div class="card">
+                <img class="card-img-top" src="<%= camp.image %>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><%= camp.title %></h5>
+                    <p class="card-text"><%= camp.description%></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= camp.location %></li>
+                    <li class="list-group-item">$<%= camp.price %>/night</li>
+                </ul>
+                <div class="card-body">
+                    <a class="card-link btn btn-info" href='/makeGrounds/<%=camp._id%>/edit'>Edit</a>
+                    <form class="d-inline" action="/makeGrounds/<%=camp._id%>?_method=DELETE" method="post">
+                        <button class="btn btn-success">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>

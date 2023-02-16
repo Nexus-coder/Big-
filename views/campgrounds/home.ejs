@@ -1,0 +1,15 @@
+<% layout('layout/boilerplate.ejs') %> 
+<h1>All Campgrounds</h1>
+<a href="/makeGrounds/new">Add New Campground</a>
+<ul>
+    <% for (let campground of campgrounds) { %> 
+        <div class="card">
+            <img class="img-fluid" src="<%=campground.image%>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><%=campground.title%></h5>
+              <p class="card-text"><%=campground.description%></p>
+              <a href="/makeGrounds/<%=campground._id%>" class="btn btn-primary">Show page</a>
+            </div>
+          </div>
+        <% } %> 
+</ul>
